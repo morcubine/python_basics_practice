@@ -1,0 +1,30 @@
+Character Frequency
+Given a string, count how many times each character appears.
+Example: "banana" → {'b': 1, 'a': 3, 'n': 2}
+
+First Non-Repeating Character
+Find the first character that appears only once.
+Example: "aabbcdde" → "c"
+
+Remove Duplicate Characters
+Remove duplicate characters while keeping their original order.
+Example: "programming" → "progamin"
+
+Longest Word
+Given a sentence, find the longest word without using max().
+
+Palindrome Words
+Print all palindrome words from a sentence.
+Example: "madam likes level roads" → madam, level
+
+String Compression
+Compress consecutive repeating characters.
+Example: "aaabbccccdaa" → "a3b2c4d1a2"
+
+Anagram Check
+Check whether two strings are anagrams without using sorted().
+Example: "listen" and "silent" → True
+
+Move Zeros to End
+Move all zeros to the end while preserving the order of other elements.
+Example: [0, 1, 0, 3, 12] → [1, 3, 12, 0, 0]

@@ -1,0 +1,85 @@
+PYTHON FILE HANDLING - HOMEWORK QUESTIONS
+
+LEVEL 1: BASIC FILE OPERATIONS
+
+1. Create a file named notes.txt and write:
+Python is easy.
+I am learning file handling.
+Practice makes programming better.
+
+Then read and print the complete file.
+
+2. Create a file named languages.txt and write:
+Python
+Java
+C++
+JavaScript
+
+Read the file one line at a time using readline().
+
+3. Read languages.txt using readlines() and print each language without extra blank lines.
+
+4. Create a file named numbers.txt and write numbers from 1 to 10, with each number on a new line.
+
+5. Read numbers.txt and calculate the sum of all numbers.
+
+LEVEL 2: WRITING AND APPENDING
+
+6. Create a file named students.txt and write:
+Rahul
+Anjali
+Sameer
+Riya
+
+Then append two more names without deleting the existing names.
+
+7. Write three lines to a file using writelines().
+
+LEVEL 3: COUNTING AND SEARCHING
+
+8. Create a file named paragraph.txt. Read it and count:
+- Total characters
+
+9. Count how many times the word "Python" occurs in a file. Make the search case-insensitive.
+
+10. Ask the user for a word. Check whether that word exists in paragraph.txt.
+
+11. Read a file and print only the lines containing the word "Python".
+
+12. Read numbers.txt and find:
+- Largest number
+- Smallest number
+- Sum of all numbers
+- Average of all numbers
+
+13. Count how many uppercase letters, lowercase letters, digits, and spaces are present in a file.
+
+LEVEL 4: FILE MODIFICATION
+
+14. Read input.txt and copy all its contents into output.txt.
+
+15. Copy only the lines containing more than 10 characters from input.txt to output.txt.
+
+16. Read a file and create another file containing the same text in uppercase.
+
+17. Replace every occurrence of "Java" with "Python" in a file.
+Hint: Read -> modify data -> write updated data.
+
+18. Remove all blank lines from a file and save the cleaned content in another file.
+
+19. Reverse the order of lines in a file.
+
+20. Create a new file containing only the unique words from another file.
+
+LEVEL 5: EXCEPTIONS
+
+21. Write a program that asks the user for a file name and reads it.
+Handle FileNotFoundError.
+
+CHALLENGE QUESTIONS
+
+22. Create a program that compares two text files and checks whether their contents are identical.
+
+23. Create a program that merges the contents of file1.txt and file2.txt into merged.txt.
+
+24. Create a program that reads a file and prints the longest line.
