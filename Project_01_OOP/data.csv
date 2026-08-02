@@ -1,0 +1,16 @@
+id:int,name:str,age:int,department:str,salary:int,city:str
+101,Alice,24,HR,45000,Delhi
+102,Bob,28,IT,60000,Mumbai
+103,Charlie,30,Finance,70000,Pune
+104,David,26,IT,65000,Bangalore
+105,Eva,29,Marketing,55000,Delhi
+106,Frank,35,Finance,90000,Hyderabad
+107,Grace,31,HR,52000,Chennai
+108,Henry,27,IT,62000,Kolkata
+109,Ivy,33,Marketing,75000,Pune
+110,Jack,25,HR,48000,Delhi
+111,Kate,32,Finance,85000,Mumbai
+112,Luke,26,IT,61000,Bangalore
+113,Mia,29,Marketing,56000,Jaipur
+114,Noah,34,Finance,92000,Delhi
+115,Olivia,28,HR,51000,Pune
