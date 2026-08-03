@@ -1,0 +1,3 @@
+Python is easy to learn. Python is powerful and Python is popular.
+Many developers love Python because Python is versatile.
+Learning Python takes practice, and practice makes Python easier to master.

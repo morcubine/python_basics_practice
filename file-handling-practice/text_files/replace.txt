@@ -1,0 +1,11 @@
+Python is a popular programming language used for enterprise applications.
+Many developers start with Python before learning other languages.
+I used to write Python code every day at my old job.
+
+
+
+Original:
+
+Java is a popular programming language used for enterprise applications.
+Many developers start with Java before learning other languages.
+I used to write Java code every day at my old job.

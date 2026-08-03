@@ -1,0 +1,4 @@
+Python is a versatile programming language. Many developers love python for its simplicity.
+PYTHON is often recommended as a first language for beginners.
+I started learning Python a few months ago, and python has quickly become my favorite tool.
+Some people write PYTHON in all caps, others prefer python in lowercase — it doesn't matter, the interpreter treats it the same either way.

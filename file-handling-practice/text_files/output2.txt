@@ -1,0 +1,4 @@
+This is a longer line with more than ten characters.
+File handling is fun.
+Learning to code takes practice and patience.
+This line should also be copied since it's long enough.

@@ -1,0 +1,10 @@
+Hi
+Python
+This is a longer line with more than ten characters.
+No
+File handling is fun.
+OK
+Short
+Learning to code takes practice and patience.
+Yes
+This line should also be copied since it's long enough.

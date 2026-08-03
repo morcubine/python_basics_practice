@@ -1,0 +1,5 @@
+Python is a popular programming language.
+It is widely used in web development.
+Many beginners start with Python.
+It has a simple and readable syntax.
+Practice is the key to mastering it.
