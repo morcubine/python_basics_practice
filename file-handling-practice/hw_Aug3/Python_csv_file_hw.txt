@@ -1,0 +1,38 @@
+Students.csv 
+Name,Age,Marks
+Alice,18,92
+Bob,19,75
+Charlie,18,88
+David,20,56
+Eva,19,99
+Frank,18,43
+Grace,20,81
+Henry,19,67
+
+Q1: Print only the students whose marks are greater than 80.
+
+Q2: Find the highest marks.
+
+Q3: Count how many students scored above the average.
+
+Q4: Print students whose names have more than 5 letters.
+
+Q5: Find the second-highest marks in students.csv.
+
+Q6: Create a new CSV file called passed_students.csv containing only students whose marks are at least 40.
+
+Dataset 2: employees.csv
+Name,Department,Salary
+John,HR,50000
+Emma,IT,72000
+Chris,Finance,65000
+Sophia,IT,82000
+Daniel,HR,45000
+Olivia,Marketing,55000
+James,Finance,90000
+Lily,IT,61000
+
+Q7: Print employees whose names end with 'a'.
+
+Q8: Print all employee names in alphabetical order.
+
