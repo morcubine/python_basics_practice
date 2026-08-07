@@ -1,0 +1,11 @@
+EmployeeID	Name	Department	Age	Salary	City
+101	Alice	HR	29	52000	'New York	newyour'
+102	Bob	IT	35	68000	'Chicago	chicagg'
+103	Charlie	Finance	41	75000	Boston
+104	Diana	Marketing	27	49000	Seattle
+105	Ethan	IT	31	62000	Austin
+106	Fiona	HR	38	58000	Denver
+107	George	Sales	45	81000	Miami
+108	Hannah	Finance	33	70000	Dallas
+109	Ian	Marketing	26	47000	Phoenix
+110	Julia	Sales	39	79000	Atlanta
