@@ -1,67 +1,9 @@
 import csv
 
-# Project: Student Record Manager
-# Step 0: Think Before Coding
-
-# Before opening your editor, answer these questions:
-
-# What is a Student?
-# What information should a Student store?
-# What should a Student be able to do?
-
-# You'll realize:
-
-# Data (Attributes)
-# Roll Number
-# Name
-# Age
-# Marks
-# Behaviors (Methods)
-# Get details
-# Update age
-# Update marks
-# Check pass/fail
-# Calculate grade
-
-# Function(s) to create:
-# ❌ None (Planning step)
-
-
-
-
-# Step 1: Create the Class
-
-# Create a class named Student.
-
-# Don't write any methods yet.
-
-# Just create the empty class.
-
-# Function(s) to create:
-
-# class Student
 
 class Student:
 
 
-# Step 2: Write the Constructor
-
-# Now think:
-
-# Whenever someone creates a Student object, what information is required?
-
-# The constructor should receive:
-
-# roll
-# name
-# age
-# marks
-
-# Store them as private attributes.
-
-# Function(s) to create:
-
-# __init__(self, roll, name, age, marks)
 
 
     def __init__(self, roll, name, age, marks):
@@ -70,21 +12,6 @@ class Student:
         self._age = age
         self._marks = marks
 
-
-# Step 3: Validate Constructor Inputs
-
-# Before storing anything:
-
-# Ask yourself:
-
-# Is roll an integer?
-# Is name a string?
-# Is age an integer?
-# Is marks an integer?
-
-# If not:
-
-# Raise appropriate errors.
 
 
         if not isinstance(roll, int):
@@ -100,13 +27,6 @@ class Student:
             raise TypeError(f'marks should be an integer, got {marks!r}')
 
 
-# Then check values:
-
-# Can age be negative?
-# Can marks be below 0?
-# Can marks be above 100?
-
-# Raise errors where necessary.
 
         if age < 0:
             raise ValueError(f'age cannot be a negative value, got {age!r}')
@@ -117,36 +37,6 @@ class Student:
             raise ValueError(f'marks cannot be over 100, got {marks!r}')
             
 
-# Only after every validation passes should you store the attributes.
-
-# Function(s) to modify:
-
-# __init__()
-
-# (No new function—add validation inside the constructor.)
-        
-
-
-
-# Step 4: Create Getter Methods
-
-# Never access attributes directly.
-
-# Create methods to return:
-
-# roll
-# name
-# age
-# marks
-
-# Test them before moving ahead.
-
-# Function(s) to create:
-
-# get_roll()
-# get_name()
-# get_age()
-# get_marks()
 
     def get_roll(self):
         return self._roll
@@ -161,54 +51,9 @@ class Student:
         return self._marks
 
 
-# Step 5: Print a Student
-
-# If someone writes
-
-# print(student)
-
-# What should they see?
-
-# Implement a readable string representation.
-
-# Don't worry about formatting too much.
-
-# Just make it informative.
-
-# Function(s) to create:
-
-# __str__()
-
     def __str__(self):
         return f'Roll: {self._roll}, Name: {self._name}, Age: {self._age}, Marks: {self._marks}' 
 
-
-# Step 6: Update Methods
-
-# Suppose a student's marks change.
-
-# Should someone write
-
-# student._marks = 90
-
-# No.
-
-# Instead create:
-
-# update_marks()
-# update_age()
-
-# These methods should:
-
-# validate input
-# update attribute
-
-# Nothing else.
-
-# Function(s) to create:
-
-# update_marks(new_marks)
-# update_age(new_age)
 
 
     def update_marks(self, new_marks):
@@ -235,45 +80,12 @@ class Student:
         self._age = new_age
 
 
-# Step 7: Add a Pass/Fail Method
-
-# Ask:
-
-# Can this student pass?
-
-# Return:
-
-# True
-# False
-
-# Don't print anything.
-
-# Just return.
-
-# Function(s) to create:
-
-# is_pass()
-
     def is_pass(self):
 
         if self._marks >= 40:
             return True
         return False
 
-
-# Step 8: Add Grade Calculation
-
-# Create another method.
-
-# It should decide the student's grade based on marks.
-
-# Return the grade.
-
-# Don't print it.
-
-# Function(s) to create:
-
-# get_grade()
 
 
     def get_grade(self):
@@ -290,24 +102,6 @@ class Student:
             return 'F'
 
 
-# Step 9: Create the CSV File
-
-# Now create a file.
-
-# Think about:
-
-# What should the first row contain?
-
-# (Header)
-
-# Then add around 5–10 students.
-
-# Function(s) to create:
-# ❌ None
-
-# Create:
-
-# students.csv
 
 # roll,name,age,marks
 # 1,Alice,20,85
@@ -331,28 +125,6 @@ class Student:
 
 
 
-# Step 10: Read the File
-
-
-
-# Create a separate function.
-
-# Its job:
-
-# open file
-# skip header
-# read each line
-# split values
-# convert numeric values
-# create Student objects
-# store them in a list
-
-# Return the list.
-
-# Function(s) to create:
-
-# load_students(filename)
-
 
 def load_students(filename):
 
@@ -374,27 +146,135 @@ def load_students(filename):
 
 
 
+def find_student(student_list, roll_number):
 
-# s1 = Student(1, 'Alice', 22, 67)
+    for s in student_list:
+        # print(s)
+        if roll_number == s.get_roll():
+            return s.get_name()
+    else:
+        raise ValueError(f'{roll_number} does not exist')
 
-# print(s1.get_roll())
-# print(s1.get_name())
-# print(s1.get_age())
-# print(s1.get_marks())
+def highest_marks(students_list):
 
-students = load_students('students.csv')
+    highest = 0
 
-for s in students:
-    print(s)
+    for s in students_list:
+        if s.get_marks() > highest:
+            highest = s.get_marks()
 
-
-#   Claude check:
-
-# print(students[0].is_pass())
-# print(students[0].get_grade())
-# students[0].update_marks(95)
-# print(students[0])
+    return highest
+        
 
 
+
+def main():
+    print('Welcome to the Python Little Project\n')
+
+    try:
+        student_list = load_students('students.csv')
+        print(f'Loaded {len(student_list)} students\n')
+    except FileNotFoundError:
+        student_list = []
+        print(f'Could not find {student_list}. Starting with an empty list.')
+
+
+    menu = ('0. Load csv file\n1. Get roll number\n2. Get name\n3. Get age\n4. Get marks\n5. Update marks\n6. Update age\n7. print object\n8. Check pass/fail\n9. Get grade\10. Find student\n11. Find top student\nQ means quit')
+
+    menu_labels = {'0': 'Load CSV file', '1': 'Get roll number', '2': 'Get name', '3': 'Get age', '4': 'Get marks', '5': 'Update marks', '6': 'Update age', '7': 'Print objedct', '8': 'Check pass/fail', '9': 'Get grade', '10': 'Find student', '11': 'Find top student'}
+     
+
+    while True:
+        print(f'Please choose one of the following:\n{menu}')
+        entry = input('> ').strip()
+        if entry.lower() in menu_labels:
+            print(f'→ {menu_labels[entry]}')
+        print()
+
+        if not student_list and entry not in ('0', 'q', 'Q'):
+            print('No students loaded - choose 0 to load the CSV first\n')
+            continue
+
+        if entry == '0':
+            student_list = load_students('students.csv')
+
+        elif entry == '1':
+            print('Roll numbers:')
+            for s in student_list:
+                print(s.get_roll())
+
+
+        elif entry == '2':
+            print('Student names:')
+            for s in student_list:
+                print(s.get_name())
+
+
+        elif entry == '3':
+            print('Student age:')
+            for s in student_list:
+                print(s.get_age())
+
+
+        elif entry == '4':
+            print('Student marks:')
+            for s in student_list:
+                print(s.get_marks())
+
+
+        elif entry == '5':
+            name = input('Enter student name: ')
+            marks = int(input('Enter new mark: '))
+            for s in student_list:
+                if name == s.get_name():
+                    s.update_marks(marks)
+                    break
+    
+        elif entry == '6':
+            name = input('Enter student name: ')
+            age = int(input('Enter new age: '))
+            for s in student_list:
+                if name == s.get_name():
+                    s.update_age(age)
+                    break
+
+        elif entry == '7':
+            roll_number = int(input('Enter roll number: '))
+            for s in student_list:
+                if roll_number == s.get_roll():
+                    print(s)
+                    break
+
+        elif entry == '8':
+            roll_number = int(input('Enter roll number: '))
+            for s in student_list:
+                if roll_number == s.get_roll():
+                    print(s.is_pass())
+                    break
+
+        elif entry == '9':
+            name = input('Enter name of student: ')
+            for s in student_list:
+                if name == s.get_name():
+                    print(s.get_grade())
+                    break
+
+        elif entry == '10':
+            roll_number = int(input('Enter roll number: '))
+            print(find_student(student_list, roll_number))
+            
+
+        elif entry == '11':
+            print(highest_marks(student_list))
+
+        elif entry.lower() == 'q':
+            print('Thank you. Bye.')
+            print()
+            break
+
+        print()
+
+
+main()
 
 
