@@ -94,9 +94,9 @@ from unittest import result
 # .txt
 #
 # from:
-#
+
 # text = "report.pdf data.csv image.jpg notes.txt backup.exe"
-#
+
 # pattern = r'\w+\.(?:pdf|csv|txt)\b'
 # # noinspection redeclaration
 # result = re.findall(pattern, text)
@@ -111,7 +111,7 @@ from unittest import result
 # ERROR Voltage too low
 # INFO System stopped
 # """
-#
+
 # pattern = r'^ERROR.*'
 # # noinspection redeclaration
 # result = re.findall(pattern, text, re.MULTILINE)
