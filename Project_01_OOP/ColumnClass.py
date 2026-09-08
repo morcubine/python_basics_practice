@@ -98,4 +98,5 @@ col = Column('age', 'int', [25, 30, 35])
 # print(col.get_length())
 # print(col.sum())    
 # print(col.mean())   
-print(col)
+
+# print(col)
