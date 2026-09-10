@@ -261,7 +261,7 @@ INV1009"""
 #     f.write(invoices)
 
 
-with open('invoice_sequence.txt', 'r') as f:
+with open('text_files/text_files_practice/invoice_sequence.txt', 'r') as f:
 
     lst = []
 
@@ -295,7 +295,7 @@ with open('invoice_sequence.txt', 'r') as f:
     new_lst = [f'INV{element}\n' for element in missing]
     # print(new_lst)
 
-with open('missing_invoices.txt', 'w') as f:
+with open('text_files/text_files_practice/missing_invoices.txt', 'w') as f:
     f.writelines(new_lst)
 
 
