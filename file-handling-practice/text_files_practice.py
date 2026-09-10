@@ -1,3 +1,5 @@
+import re
+
 # Write only reviews containing the word "bad" into negative_reviews.txt.
 #
 # Example input:
@@ -158,7 +160,7 @@ Bad packaging"""
 
 # with open('customers.txt', 'w') as f:
 #     f.writelines(customers)
-
+#
 # with open('customers.txt', 'r') as f:
 #     content = f.readlines()
 #
@@ -172,9 +174,9 @@ Bad packaging"""
 #     #         unique.append(name)
 #
 #     print(unique)
-#
-# # with open('unique_customers.txt', 'w') as f:
-# #     f.writelines(unique)
+
+# with open('unique_customers.txt', 'w') as f:
+#     f.writelines(unique)
 
 
 
@@ -185,11 +187,11 @@ Bad packaging"""
 #
 # emails.txt:
 #
-# emails = ['aman @ gmail.com\n'
-# 'riya.gmail.com\n'
-# 'sam @ yahoo.com\n'
-# 'karan @ company\n'
-# 'neha @ hotmail.com\n']
+emails = ['aman@gmail.com\n'
+'riya.gmail.com\n'
+'sam@yahoo.com\n'
+'karan@company\n'
+'neha@hotmail.com\n']
 #
 # Write
 # emails
@@ -200,21 +202,42 @@ Bad packaging"""
 # invalid_emails.txt.
 
 
-# with open('emails.txt', 'w') as f:
+# with open('text_files/text_files_practice/emails.txt', 'w') as f:
 #     f.writelines(emails)
-
+#
 # with open('text_files/text_files_practice/emails.txt', 'r') as f:
-#     content = f.readlines()
+#     content = f.read()
 #     invalid = []
 #
-#     for entry in content:
-#         e = entry.split()
-#         # print(e)
-#         if '@' not in e and '.' not in e:
-#             invalid.append(entry)
+#     pattern = r'\w+[@]\w+\.\w{2,3}'
+#     result = re.findall(pattern, content, re.MULTILINE)
 #
-#     # print(invalid)
+#     content = content.split()
+#     # print(content)
 #
+#     a = set(content)
+#     b = set(result)
+#
+#     x = a - b
+#
+#     print(list(x))
+
+    # for entry in content:
+    #     if entry not in result:
+    #         invalid.append(entry)
+    #
+    # print(invalid)
+
+    # print(result)
+
+    # for entry in content:
+    #     # e = entry.split()
+    #     # print(e)
+    #     if '@' not in entry and '.' not in entry:
+    #         invalid.append(entry)
+    #
+    # print(invalid)
+
 # with open('text_files/text_files_practice/invalid_emails.txt', 'w') as f:
 #     f.writelines(invalid)
 
@@ -222,14 +245,59 @@ Bad packaging"""
 
 # Missing Invoice Numbers
 # invoice_sequence.txt
-# INV1001
-# INV1002
-# INV1003
-# INV1005
-# INV1006
-# INV1008
-# INV1009
+
+invoices = """INV1001
+INV1005
+INV1006
+INV1008
+INV1009"""
+
 # Question: Invoice numbers should be sequential. Find the missing invoice numbers.
 # Expected:
 # INV1004
 # INV1007
+
+# with open('invoice_sequence.txt', 'w') as f:
+#     f.write(invoices)
+
+
+with open('invoice_sequence.txt', 'r') as f:
+
+    lst = []
+
+    for line in f:
+        # print(line)
+        line = line.strip()
+        nums = line[3:]
+        # print(nums)
+        lst.append(int(nums))
+
+    sorted_list = sorted(lst)
+    # print(sorted_list)
+
+    all_nums = []
+
+    i = sorted_list[0]
+
+    while i <= sorted_list[-1]:
+        all_nums.append(i)
+        i += 1
+
+    # print(all_nums)
+
+
+    a = set(all_nums)
+    b = set(sorted_list)
+
+    missing = a - b
+
+    # print(missing)
+    new_lst = [f'INV{element}\n' for element in missing]
+    # print(new_lst)
+
+with open('missing_invoices.txt', 'w') as f:
+    f.writelines(new_lst)
+
+
+
+
