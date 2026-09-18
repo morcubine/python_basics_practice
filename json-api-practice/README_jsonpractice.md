@@ -2,7 +2,7 @@
 
 Small, self-contained exercises for practicing HTTP requests and JSON handling in Python using the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) test API and the `requests` library.
 
-Each question is solved independently in `json_practise.py` (most are commented out so they don't all run at once — uncomment one block at a time to test it).
+Each question is solved independently in `json_practice.py` (most are commented out so they don't all run at once — uncomment one block at a time to test it).
 
 ## Exercises
 
