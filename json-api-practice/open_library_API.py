@@ -19,26 +19,26 @@ from pprint import pprint
 
 
 
-# # print(response)
 # book_title = input('Enter book title: ')
-# pages = int(input('Enter number of pages: '))
+# entries = int(input('Number of entries: '))
 #
-# params = {'q': book_title, 'limit': pages}
+# params = {'q': book_title, 'limit': entries}
+# # params = {'q': book_title, 'limit': 5}
+#
 #
 # response = requests.get(URL, params=params).json()
 # # pprint(response)
 #
-# total_books = 0
+# total_books = len(response['docs'])
 #
 # for data in response['docs']:
-#     total_books += 1
-#     if 'author_name' in data:
-#         print(data['author_name'], data.get('first_publish_year', 1990), data['title'])
-#
+#     # total_books += 1
+#     if 'title' in data:
+#         print(f"{data['title']}, author: {', '.join(data['author_name'])}, published: {data.get('first_publish_year', 'unkown')}")
 #     else:
 #         print('Book does not exist')
 #
-# print(total_books)
+# print(f'Number of books: {total_books}')
 
 
 """Homework TODO"""
@@ -52,45 +52,27 @@ from pprint import pprint
 
 
 
-
-# API URL
-
-URL = 'https://api.open-meteo.com/v1/forecast'
-
-# Question
+# book_topic = input('Enter topic of a book: ')
 #
-# Get:
+# params = {'q': book_topic, 'limit': 50}
 #
-# temperature
-# humidity
-# wind speed
-
-params = {'latitude': 19.2, 'longitude': 109.7, 'current': ['temperature_2m', 'wind_speed_10m', 'relative_humidity_2m']}
-
-response = requests.get(URL, params=params).json()
+# response = requests.get(URL, params=params).json()
 # pprint(response)
 
-current = response['current']
-
-humidity = current['relative_humidity_2m']
-temp = current['temperature_2m']
-wind = current['wind_speed_10m']
-
-print(f'Temperature: {temp}\nHumidity: {humidity}\nWind: {wind}')
-
-
-"""Homework TODO"""
-
-
-# Question
+# earliest_publ = float('inf')
+# title = ''
 #
-# Get hourly temperature data.
+# for data in response['docs']:
+#     if 'first_publish_year' in data and data['first_publish_year'] < earliest_publ:
+#         earliest_publ = data['first_publish_year']
+#         title = data['title']
+#         found = True
 #
-# Find:
 #
-# Highest temperature
-# Lowest temperature
-# Average temperature
+# if title:
+#     print(f'Book "{title.title()}", first published: {earliest_publ}')
+# else:
+#     print('No books with known publish year found')
 
 
 """Homewrk TODO"""
@@ -104,6 +86,98 @@ print(f'Temperature: {temp}\nHumidity: {humidity}\nWind: {wind}')
 # Minimum Year: 2015
 #
 # Print only books first published in or after that year.
+
+
+# book_topic = input('Enter topic of a book: ')
+# publ_year = int(input('Enter publish year: '))
+#
+# params = {'q': book_topic, 'limit': 50}
+#
+# response = requests.get(URL, params=params).json()
+# # pprint(response)
+#
+#
+# for data in response['docs']:
+#     title = data['title']
+#     if 'first_publish_year' in data:
+#         year = data['first_publish_year']
+#         if data['first_publish_year'] >= publ_year:
+#             print(f'Book "{title.title()}", published {year}')
+#     else:
+#         print('Book not found')
+
+
+
+
+# API URL
+
+# URL = 'https://api.open-meteo.com/v1/forecast'
+
+# Question
+#
+# Get:
+#
+# temperature
+# humidity
+# wind speed
+
+# params = {'latitude': 19.2, 'longitude': 109.7, 'current': ['temperature_2m', 'wind_speed_10m', 'relative_humidity_2m']}
+# params = {'latitude': 19.2, 'longitude': 109.7, 'daily': ['temperature_2m_max' , 'temperature_2m_mean' , 'temperature_2m_min'] }
+#
+# response = requests.get(URL, params=params).json()
+# pprint(response)
+
+# current = response['current']
+#
+# humidity = current['relative_humidity_2m']
+# temp = current['temperature_2m']
+# wind = current['wind_speed_10m']
+#
+# print(f'Temperature: {temp}\nHumidity: {humidity}\nWind: {wind}')
+
+
+"""Homework TODO"""
+
+
+# Question
+#
+# Get hourly temperature data.
+#
+# Find:
+#
+# Highest temperature: 31.4
+# Lowest temperature: 21.2
+# Average temperature: 24.83
+
+# daily = response['daily']
+#
+# highest_temp = daily['temperature_2m_max']
+# lowest_temp = daily['temperature_2m_min']
+# avg_temp = daily['temperature_2m_mean']
+#
+# highest = 0
+# lowest = float('inf')
+# avg = 0
+#
+#
+# for temp in range(len(highest_temp)):
+#     if highest_temp[temp] > highest:
+#         highest = highest_temp[temp]
+#     if lowest_temp[temp] < lowest:
+#         lowest = lowest_temp[temp]
+#     avg = sum(avg_temp) / len(avg_temp)
+#
+#
+#
+#
+# print(f'Highest temperature: {highest}\nLowest temperature: {lowest}\nAverage temperature: {round(avg, 2)}')
+
+
+
+
+
+
+
 
 
 
