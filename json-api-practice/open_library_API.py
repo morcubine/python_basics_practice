@@ -57,8 +57,8 @@ from pprint import pprint
 # params = {'q': book_topic, 'limit': 50}
 #
 # response = requests.get(URL, params=params).json()
-# pprint(response)
-
+# # pprint(response)
+#
 # earliest_publ = float('inf')
 # title = ''
 #
@@ -66,7 +66,7 @@ from pprint import pprint
 #     if 'first_publish_year' in data and data['first_publish_year'] < earliest_publ:
 #         earliest_publ = data['first_publish_year']
 #         title = data['title']
-#         found = True
+#
 #
 #
 # if title:
@@ -111,7 +111,7 @@ from pprint import pprint
 
 # API URL
 
-# URL = 'https://api.open-meteo.com/v1/forecast'
+URL = 'https://api.open-meteo.com/v1/forecast'
 
 # Question
 #
@@ -123,10 +123,11 @@ from pprint import pprint
 
 # params = {'latitude': 19.2, 'longitude': 109.7, 'current': ['temperature_2m', 'wind_speed_10m', 'relative_humidity_2m']}
 # params = {'latitude': 19.2, 'longitude': 109.7, 'daily': ['temperature_2m_max' , 'temperature_2m_mean' , 'temperature_2m_min'] }
-#
+# params = {'latitude': 19.2, 'longitude': 109.7, 'hourly': 'temperature_2m'}
+# #
 # response = requests.get(URL, params=params).json()
-# pprint(response)
-
+# # pprint(response)
+#
 # current = response['current']
 #
 # humidity = current['relative_humidity_2m']
@@ -166,20 +167,65 @@ from pprint import pprint
 #     if lowest_temp[temp] < lowest:
 #         lowest = lowest_temp[temp]
 #     avg = sum(avg_temp) / len(avg_temp)
-#
-#
-#
-#
+
+
+
+
 # print(f'Highest temperature: {highest}\nLowest temperature: {lowest}\nAverage temperature: {round(avg, 2)}')
 
 
+params = {'latitude': 19.2, 'longitude': 109.7, 'hourly': 'temperature_2m'}
+
+response = requests.get(URL, params=params).json()
+
+
+hourly = response['hourly']
+#
+# print(hourly)
 
 
 
 
+time = hourly['time']
+temperature = hourly['temperature_2m']
+
+highest = 0
+highest_hour = 0
+
+lowest = float('inf')
+lowest_hour = 0
+
+avg = 0
+avg_hour = 0
+
+lowest_diff = float('inf')
+closest_to_avg = float('inf')
+
+
+avg = sum(temperature) / len(temperature)
+
+for i in range(len(time)):
+    if temperature[i] > highest:
+        highest = temperature[i]
+        highest_hour = time[i]
+    if temperature[i] < lowest:
+        lowest = temperature[i]
+        lowest_hour = time[i]
+
+    diff = abs(temperature[i] - avg)
+
+    if diff < lowest_diff:
+        lowest_diff = diff
+        closest_to_avg = temperature[i]
+        avg_hour = time[i]
+
+
+print(f"Highest temp: {highest} at {highest_hour}, lowest temp: {lowest} at {lowest_hour}, average temp: {round(avg, 2)} at {avg_hour}")
 
 
 
+# print(avg)
+# print(temperature)
 
 
 
