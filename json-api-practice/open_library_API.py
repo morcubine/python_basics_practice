@@ -220,7 +220,7 @@ for i in range(len(time)):
         avg_hour = time[i]
 
 
-print(f"Highest temp: {highest} at {highest_hour}, lowest temp: {lowest} at {lowest_hour}, average temp: {round(avg, 2)} at {avg_hour}")
+print(f"Highest temp: {highest} at {highest_hour}, lowest temp: {lowest} at {lowest_hour}, average temp: {round(avg, 1)} at {avg_hour}")
 
 
 
