@@ -1,5 +1,5 @@
 # Clean a messy transaction dataset
-from enum import unique
+
 
 transactions = [
     {"id": "T101", "amount": " 1200 ", "status": "SUCCESS"},
