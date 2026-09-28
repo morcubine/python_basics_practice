@@ -189,17 +189,17 @@ hourly = response['hourly']
 time = hourly['time']
 temperature = hourly['temperature_2m']
 
-highest = 0
+highest = float('-inf')
 highest_hour = 0
 
 lowest = float('inf')
 lowest_hour = 0
 
-avg = 0
+# avg = 0  --> redundant as being replaced below
 avg_hour = 0
 
 lowest_diff = float('inf')
-closest_to_avg = float('inf')
+# closest_to_avg = float('inf')  --> not being used
 
 
 avg = sum(temperature) / len(temperature)
@@ -216,7 +216,7 @@ for i in range(len(time)):
 
     if diff < lowest_diff:
         lowest_diff = diff
-        closest_to_avg = temperature[i]
+        # closest_to_avg = temperature[i]
         avg_hour = time[i]
 
 
