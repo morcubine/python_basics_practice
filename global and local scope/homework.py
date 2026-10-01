@@ -5,10 +5,12 @@
 #
 # def test():
 #     x = 20
-#     print(x)
+#     print(x)    #   --> 20
 #
 # test()
-# print(x)
+# print(x)    #   --> 10
+
+
 
 
 # count = 10
@@ -20,15 +22,38 @@
 # increase()
 
 
+# count = 10
+#
+# def increase():
+#     global count
+#     count = count + 1
+#     print(count)      #   --> 11  /   --> 10
+#
+# increase()
+# increase()
+# # print(count)    #   --> 12
+
+
+# count = 10
+#
+# def increase(n):
+#     return n + 1
+#
+#
+# count = increase(count)
+# print(count)      #   --> 11
+
+
+
 
 # name = "Python"
 #
 # def change():
 #     name = "Java"
-#     print(name)
+#     print(name)     #   --> 'Java'
 #
 # change()
-# print(name)
+# print(name)     #   --> 'Python'
 
 
 
@@ -36,10 +61,10 @@
 #
 # def first():
 #     x = 50
-#     print(x)
+#     print(x)    #   --> 50
 #
 # def second():
-#     print(x)
+#     print(x)    #   --> 100
 #
 # first()
 # second()
@@ -50,10 +75,10 @@
 #
 # def test():
 #     b = 20
-#     print(a + b)
+#     print(a + b)    #   --> 20
 #
 # test()
-# print(a)
+# print(a)    #   --> 10
 
 
 
@@ -66,25 +91,25 @@
 #     if x > 5:
 #         x = 20
 #
-#     print(x)
+#     print(x)    #   --> 20
 #
 # test()
-# print(x)
+# print(x)    #   --> 5
 
 
 
 
 
-x = 10
-
+# x = 10
+#
 # def test():
 #     for x in range(3):
 #         pass
 #
-#     print(x)
+#     print(x)    #   --> 10
 #
 # test()
-# print(x)
+# print(x)    #   --> 10
 
 
 
@@ -96,9 +121,10 @@ x = 10
 #     return value
 #
 # result = calculate(value)
+# # value = calculate(value)
 #
-# print(result)
-# print(value)
+# print(result)   #   --> 200
+# print(value)    #   --> 200
 
 
 
@@ -106,7 +132,7 @@ x = 10
 # x = 10
 #
 # def test():
-#     print(x)
+#     print(x)    #   --> error (not associated)
 #     x = 20
 #
 # test()
@@ -122,7 +148,7 @@ x = 10
 #     if False:
 #         x = 20
 #
-#     print(x)
+#     print(x)    #   --> 10
 #
 # test()
 
@@ -133,10 +159,10 @@ x = 10
 # x = 5
 #
 # def one():
-#     x = 10
+#     x = 10      #   --> error
 #     two()
 #
 # def two():
-#     print(x)
+#     print(x)    #   --> 5
 #
 # one()
